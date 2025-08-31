@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vs-siltstrider", "vs-siltstrider\vs-siltstrider\vs-siltstrider.csproj", "{9B5CE49A-9672-48ED-B9A4-2DC70B74C5DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CakeBuild", "vs-siltstrider\ZZCakeBuild\CakeBuild.csproj", "{889957DC-1D9B-48F1-9324-221A12BE11F7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B5CE49A-9672-48ED-B9A4-2DC70B74C5DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B5CE49A-9672-48ED-B9A4-2DC70B74C5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B5CE49A-9672-48ED-B9A4-2DC70B74C5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B5CE49A-9672-48ED-B9A4-2DC70B74C5DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{889957DC-1D9B-48F1-9324-221A12BE11F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{889957DC-1D9B-48F1-9324-221A12BE11F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{889957DC-1D9B-48F1-9324-221A12BE11F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{889957DC-1D9B-48F1-9324-221A12BE11F7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {419D7CE0-57B3-4144-8EDF-1BC62253C953}
+	EndGlobalSection
+EndGlobal
