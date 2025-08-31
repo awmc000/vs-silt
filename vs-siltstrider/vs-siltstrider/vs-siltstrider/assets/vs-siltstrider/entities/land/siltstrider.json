@@ -2,10 +2,220 @@
   "code": "siltstrider",
   "class": "EntityAgent",
   "hitboxSize": {
-    "x": 10,
+    "x": 3,
     "y": 10
   },
   "drops": [],
+  "attributes": {
+    "tamed": true
+  },
+  "behaviorConfigs": {
+    "controlledphysics": {
+      "stepHeight": 3.1251,
+      "stepUpSpeed": 0.1
+    },
+    "floatupwhenstuck": { "onlyWhenDead": true },
+    "rideableaccessories": {
+      "wearableSlots": [
+        {
+          "code": "head",
+          "forCategoryCodes": [ "bridle" ],
+          "attachmentPointCode": "HeadAP"
+        },
+        {
+          "code": "face",
+          "forCategoryCodes": [ "face" ],
+          "attachmentPointCode": "FaceAP"
+        },
+        {
+          "code": "neck",
+          "forCategoryCodes": [ "lantern" ],
+          "attachmentPointCode": "NeckAP"
+        },
+        {
+          "code": "middleback",
+          "forCategoryCodes": [ "saddle" ],
+          "attachmentPointCode": "MidAP"
+        },
+        {
+          "code": "middlebackunder",
+          "forCategoryCodes": [ "blanket" ],
+          "attachmentPointCode": "MidUnderAP"
+        },
+        {
+          "code": "lowerback",
+          "forCategoryCodes": [ "bedroll" ],
+          "attachmentPointCode": "RearAP"
+        },
+        {
+          "code": "lowerbackside",
+          "forCategoryCodes": [ "sidebags" ],
+          "attachmentPointCode": "RearSideAP"
+        },
+        {
+          "code": "frontrightside",
+          "forCategoryCodes": [ "utilities" ],
+          "attachmentPointCode": "RFrontAP"
+        },
+        {
+          "code": "frontleftside",
+          "forCategoryCodes": [ "utilities" ],
+          "attachmentPointCode": "LFrontAP"
+        }
+      ]
+    },
+    "selectionboxes": {
+      "selectionBoxes": [ "HeadAP", "FaceAP", "NeckAP", "MidAP", "MidUnderAP", "RearAP", "RearSideAP", "RFrontAP", "LFrontAP" ]
+    },
+    "rideable": {
+      "interactMountAnySeat": true,
+      "seats": [
+        {
+          "apName": "Rider",
+          "selectionBox": "MidAP",
+          "bodyYawLimit": 0.2,
+          "controllable": true,
+          "mountOffset": {
+            "x": 20,
+            "y": 50,
+            "z": 20
+          }
+        }
+      ],
+      "controls": {
+        "idle": {
+          "weight": 1,
+          "riderAnim": {
+            "animation": "rideelk-idle",
+            "animationSpeed": 1,
+            "weight": 1,
+            "withFpVariant": true,
+            "blendMode": "Average",
+            "elementWeight": {
+              "LowerTorso": 80,
+              "UpperTorso": 80,
+              "UpperFootR": 80,
+              "UpperFootL": 80,
+              "LowerFootR": 80,
+              "LowerFootL": 80
+            },
+            "elementBlendMode": {
+              "LowerTorso": "Average",
+              "UpperTorso": "Average",
+              "UpperFootR": "Average",
+              "UpperFootL": "Average",
+              "LowerFootR": "Average",
+              "LowerFootL": "Average"
+            }
+          }
+        },
+        "swim": {
+          "animation": "Swim",
+          "animationSpeed": 1,
+          "movespeed": 0.02,
+          "weight": 10,
+          "blendMode": "Average",
+          "riderAnim": {
+            "animation": "rideelk-walk",
+            "animationSpeed": 1,
+            "weight": 1,
+            "withFpVariant": true,
+            "blendMode": "Average",
+            "elementWeight": {
+              "LowerTorso": 80,
+              "UpperTorso": 80,
+              "UpperFootR": 80,
+              "UpperFootL": 80,
+              "LowerFootR": 80,
+              "LowerFootL": 80
+            },
+            "elementBlendMode": {
+              "LowerTorso": "Average",
+              "UpperTorso": "Average",
+              "UpperFootR": "Average",
+              "UpperFootL": "Average",
+              "LowerFootR": "Average",
+              "LowerFootL": "Average"
+            }
+          }
+        },
+        "walk": {
+          "animation": "trot",
+          "animationSpeed": 1.35,
+          "weight": 10,
+          "movespeed": 0.019,
+          "blendMode": "Average",
+          "riderAnim": {
+            "animation": "rideelk-walk",
+            "animationSpeed": 1,
+            "weight": 1,
+            "withFpVariant": true,
+            "blendMode": "Average",
+            "elementWeight": {
+              "LowerTorso": 80,
+              "UpperTorso": 80,
+              "UpperFootR": 80,
+              "UpperFootL": 80,
+              "LowerFootR": 80,
+              "LowerFootL": 80
+            },
+            "elementBlendMode": {
+              "LowerTorso": "Average",
+              "UpperTorso": "Average",
+              "UpperFootR": "Average",
+              "UpperFootL": "Average",
+              "LowerFootR": "Average",
+              "LowerFootL": "Average"
+            }
+          }
+        },
+        "walkback": {
+          "animation": "walkback",
+          "animationSpeed": 2.7,
+          "weight": 10,
+          "movespeed": 0.011,
+          "easeInSpeed": 1,
+          "easeOutSpeed": 3,
+          "blendMode": "Average",
+          "riderAnim": {
+            "animation": "rideelk-walk",
+            "animationSpeed": 1,
+            "weight": 1,
+            "withFpVariant": true,
+            "blendMode": "Average",
+            "elementWeight": {
+              "LowerTorso": 80,
+              "UpperTorso": 80,
+              "UpperFootR": 80,
+              "UpperFootL": 80,
+              "LowerFootR": 80,
+              "LowerFootL": 80
+            },
+            "elementBlendMode": {
+              "LowerTorso": "Average",
+              "UpperTorso": "Average",
+              "UpperFootR": "Average",
+              "UpperFootL": "Average",
+              "LowerFootR": "Average",
+              "LowerFootL": "Average"
+            }
+          }
+        }
+      }
+    },
+    "health": {
+      "currenthealthByType": {
+        "*-adult": 30
+      },
+      "maxhealthByType": {
+        "*-adult": 30,
+        "*-baby": 9
+      }
+    },
+    "ownable": {
+      "groupCode": "mountableanimal"
+    }
+  },
   "client": {
     "renderer": "Shape",
     "shape": { "base": "entity/land/siltstrider" },
@@ -20,7 +230,14 @@
         "code": "floatupwhenstuck", // Fixes corpse get stuck in ground
         "onlyWhenDead": true
       },
-      { "code": "interpolateposition" } // Smooths out movement of entity
+      { "code": "interpolateposition" }, // Smooths out movement of entity
+      {
+        "code": "rideable",
+        "enabledByType": {
+          "*": true
+        }
+      },
+      { "code": "ropetieable" }
     ],
     "animations": [
       {
@@ -48,73 +265,73 @@
   },
   "server": {
     "behaviors": [
-        { "code": "repulseagents" },
-        {
-          "code": "controlledphysics", // Adds physic interaction
-          "stepHeight": 0.2
-        },
-        {
-          "code": "health", // Adds a health bar to the entity
-          "currenthealth": 4,
-          "maxhealth": 4
-        },
-        {
-          "code": "deaddecay", // Makes the dead entity stay for one hour
-          "hoursToDecay": 1
-        },
-        {
-          "code": "floatupwhenstuck", // Fixes corpse get stuck in ground
-          "onlyWhenDead": true
-        },
-        {
-          "code": "despawn", // Makes the entity despawn if there is no player within 48 blocks
-          "minPlayerDistance": 48,
-          "minSeconds": 5
-        },
-        {
-          "code": "emotionstates", // Adds different emotion states
-          "states": [
-            {
-              "code": "fleeondamage", // After the entity is hit it will try to flee for 10 seconds
-              "duration": 10,
-              "chance": 0.2,
-              "slot": 0,
-              "priority": 1,
-              "accumType": "max"
-            }
-          ]
-        },
-        {
-          "code": "taskai", // Handles what the entity does, a task will be processed one at a time
-          "aitasks": [
-            {
-              "code": "idle", // the figure will stand still and think
-              "priority": 1.2,
-              "priorityForCancel": 1.35,
-              "minduration": 4000,
-              "maxduration": 6000,
-              "chance": 0.001,
-              "initialMinCoolDown": 2000,
-              "initialMaxCoolDown": 150000,
-              "mincooldown": 300000,
-              "maxcooldown": 10000000,
-              "animation": "think",
-              "animationSpeed": 1.25
-            },
-            {
-              "code": "wander", // The entity will walk around
-              "priority": 1.0,
-              "movespeed": 0.008,
-              "animationSpeed": 1.6,
-              "animation": "run",
-              "preferredLightLevel": 15
-            },
-            {
-              "code": "lookaround", // The entity will look around
-              "priority": 0.5
-            }
-          ]
-        }
-      ]
+      { "code": "repulseagents" },
+      {
+        "code": "controlledphysics", // Adds physic interaction
+        "stepHeight": 0.2
+      },
+      {
+        "code": "health", // Adds a health bar to the entity
+        "currenthealth": 4,
+        "maxhealth": 4
+      },
+      {
+        "code": "deaddecay", // Makes the dead entity stay for one hour
+        "hoursToDecay": 1
+      },
+      {
+        "code": "floatupwhenstuck", // Fixes corpse get stuck in ground
+        "onlyWhenDead": true
+      },
+      {
+        "code": "despawn", // Makes the entity despawn if there is no player within 48 blocks
+        "minPlayerDistance": 48,
+        "minSeconds": 5
+      },
+      {
+        "code": "emotionstates", // Adds different emotion states
+        "states": [
+          {
+            "code": "fleeondamage", // After the entity is hit it will try to flee for 10 seconds
+            "duration": 10,
+            "chance": 0.2,
+            "slot": 0,
+            "priority": 1,
+            "accumType": "max"
+          }
+        ]
+      },
+      {
+        "code": "taskai", // Handles what the entity does, a task will be processed one at a time
+        "aitasks": [
+          {
+            "code": "idle", // the figure will stand still and think
+            "priority": 1.2,
+            "priorityForCancel": 1.35,
+            "minduration": 4000,
+            "maxduration": 6000,
+            "chance": 0.001,
+            "initialMinCoolDown": 2000,
+            "initialMaxCoolDown": 150000,
+            "mincooldown": 300000,
+            "maxcooldown": 10000000,
+            "animation": "idle",
+            "animationSpeed": 1.25
+          },
+          {
+            "code": "wander", // The entity will walk around
+            "priority": 1.0,
+            "movespeed": 0.008,
+            "animationSpeed": 1.6,
+            "animation": "walk",
+            "preferredLightLevel": 15
+          },
+          {
+            "code": "lookaround", // The entity will look around
+            "priority": 0.5
+          }
+        ]
+      }
+    ]
   }
 }
