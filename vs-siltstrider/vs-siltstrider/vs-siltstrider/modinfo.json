@@ -1,13 +1,13 @@
 {
-    "type": "code",
-    "modid": "vs-siltstrider",
-    "name": "vs_siltstrider",
-    "authors": [
-        "Unknown"
-    ],
-    "description": "To be added",
-    "version": "1.0.0",
-    "dependencies": {
-        "game": ""
-    }
+  "type": "code",
+  "modid": "vs-siltstrider",
+  "name": "Silt Strider",
+  "authors": [
+    "Genovefa"
+  ],
+  "description": "A docile, rideable insect of great stature, used by the Dunmer for overland voyages for centuries.",
+  "version": "0.0.1",
+  "dependencies": {
+    "game": ""
+  }
 }

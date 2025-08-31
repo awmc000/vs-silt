@@ -1,0 +1,120 @@
+{
+  "code": "siltstrider",
+  "class": "EntityAgent",
+  "hitboxSize": {
+    "x": 10,
+    "y": 10
+  },
+  "drops": [],
+  "client": {
+    "renderer": "Shape",
+    "shape": { "base": "entity/land/siltstrider" },
+    "texture": { "base": "chitin2" },
+    "behaviors": [
+      { "code": "repulseagents" },
+      {
+        "code": "controlledphysics", // Adds physics to the entity
+        "stepHeight": 0.2
+      },
+      {
+        "code": "floatupwhenstuck", // Fixes corpse get stuck in ground
+        "onlyWhenDead": true
+      },
+      { "code": "interpolateposition" } // Smooths out movement of entity
+    ],
+    "animations": [
+      {
+        "code": "idle",
+        "animation": "idle",
+        "animationSpeed": 1,
+        "weight": 10,
+        "blendMode": "AddAverage"
+      },
+      {
+        "code": "walk",
+        "animation": "walk",
+        "animationSpeed": 1,
+        "weight": 10,
+        "blendMode": "AddAverage"
+      },
+      {
+        "code": "eat",
+        "animation": "eat",
+        "animationSpeed": 1,
+        "weight": 10,
+        "blendMode": "AddAverage"
+      }
+    ]
+  },
+  "server": {
+    "behaviors": [
+        { "code": "repulseagents" },
+        {
+          "code": "controlledphysics", // Adds physic interaction
+          "stepHeight": 0.2
+        },
+        {
+          "code": "health", // Adds a health bar to the entity
+          "currenthealth": 4,
+          "maxhealth": 4
+        },
+        {
+          "code": "deaddecay", // Makes the dead entity stay for one hour
+          "hoursToDecay": 1
+        },
+        {
+          "code": "floatupwhenstuck", // Fixes corpse get stuck in ground
+          "onlyWhenDead": true
+        },
+        {
+          "code": "despawn", // Makes the entity despawn if there is no player within 48 blocks
+          "minPlayerDistance": 48,
+          "minSeconds": 5
+        },
+        {
+          "code": "emotionstates", // Adds different emotion states
+          "states": [
+            {
+              "code": "fleeondamage", // After the entity is hit it will try to flee for 10 seconds
+              "duration": 10,
+              "chance": 0.2,
+              "slot": 0,
+              "priority": 1,
+              "accumType": "max"
+            }
+          ]
+        },
+        {
+          "code": "taskai", // Handles what the entity does, a task will be processed one at a time
+          "aitasks": [
+            {
+              "code": "idle", // the figure will stand still and think
+              "priority": 1.2,
+              "priorityForCancel": 1.35,
+              "minduration": 4000,
+              "maxduration": 6000,
+              "chance": 0.001,
+              "initialMinCoolDown": 2000,
+              "initialMaxCoolDown": 150000,
+              "mincooldown": 300000,
+              "maxcooldown": 10000000,
+              "animation": "think",
+              "animationSpeed": 1.25
+            },
+            {
+              "code": "wander", // The entity will walk around
+              "priority": 1.0,
+              "movespeed": 0.008,
+              "animationSpeed": 1.6,
+              "animation": "run",
+              "preferredLightLevel": 15
+            },
+            {
+              "code": "lookaround", // The entity will look around
+              "priority": 0.5
+            }
+          ]
+        }
+      ]
+  }
+}
