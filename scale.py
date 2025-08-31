@@ -4,6 +4,8 @@ scale.py
 Geometrically scale a Vintage Story model.
 
 Assumes no texturing has been done yet, should be used in the model stage.
+usage: python vsmc_scale.py {input filename} {factor} {output filename}
+example: python vsmc_scale.py bunny.json 5 bigbunny.json
 '''
 import json
 import sys
@@ -71,7 +73,7 @@ def scale(model, factor: int) -> dict:
 
 if __name__ == "__main__":
     # Check contents of sys.argv, print usage if invalid.
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 4:
         print(
             'usage: python vsmc_scale.py {input filename} {factor} {output filename}\n'
             'example: python vsmc_scale.py bunny.json 5 bigbunny.json'
