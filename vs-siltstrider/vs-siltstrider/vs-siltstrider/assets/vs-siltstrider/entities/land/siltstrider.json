@@ -73,7 +73,7 @@
         {
           "apName": "Rider",
           "selectionBox": "MidAP",
-          "bodyYawLimit": 0.2,
+          "bodyYawLimit": 0.1,
           "controllable": true,
           "mountOffset": {
             "x": 0,
@@ -284,14 +284,14 @@
     "behaviors": [
       { "code": "repulseagents" },
       {
-        "code": "controlledphysics", // Adds physics to the entity
+        "code": "controlledphysics",
         "stepHeight": 4
       },
       {
-        "code": "floatupwhenstuck", // Fixes corpse get stuck in ground
+        "code": "floatupwhenstuck",
         "onlyWhenDead": true
       },
-      { "code": "interpolateposition" }, // Smooths out movement of entity
+      { "code": "interpolateposition" },
       {
         "code": "rideable",
         "enabledByType": {
@@ -330,7 +330,7 @@
       { "code": "selectionboxes" },
       { "code": "repulseagents" },
       {
-        "code": "controlledphysics", // Adds physic interaction
+        "code": "controlledphysics",
         "stepHeight": 4
       },
       {
