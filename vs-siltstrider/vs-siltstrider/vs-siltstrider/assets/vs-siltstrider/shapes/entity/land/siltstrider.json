@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Body/LegPair2/Leg3,Root/Body/LegPair2/Leg4,Root/Body/Arm/ForearmBack,Root/Body/LegTop,Root/Body/LegPair/Leg,Root/Body/RearBody/Cube5,Root/Body/LegPair3/Leg6,Root/Body/RearBody,Root/Body/LegPair3/Leg5,Root/Body/LegPair/Leg2,Root/Head/Face/Mandible2,Root/Body/Arm,Root/Body/LegPair,Root/Body/LegPair2",
+		"collapsedPaths": "Root/Body/LegPair2/Leg3,Root/Body/LegPair2/Leg4,Root/Body/Arm/ForearmBack,Root/Body/LegTop,Root/Body/LegPair/Leg,Root/Body/RearBody/Cube5,Root/Body/LegPair3/Leg6,Root/Body/LegPair3/Leg5,Root/Body/LegPair/Leg2,Root/Head/Face/Mandible2,Root/Body/Arm,Root/Body/LegPair,Root/Body/LegPair2",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -118,6 +118,13 @@
 											}
 										}
 									]
+								}
+							],
+							"attachmentpoints": [
+								{
+									"code": "Rope",
+									"posX": "9.0","posY": "0.0","posZ": "6.0",
+									"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
 								}
 							]
 						}
@@ -304,6 +311,13 @@
 										"west": { "texture": "#chitin2", "uv": [ 0.0, 0.0, 4.0, 7.75 ], "autoUv": false },
 										"up": { "texture": "#chitin2", "uv": [ 0.0, 0.0, 10.0, 4.0 ], "autoUv": false }
 									}
+								}
+							],
+							"attachmentpoints": [
+								{
+									"code": "",
+									"posX": "0.0","posY": "0.0","posZ": "0.0",
+									"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
 								}
 							]
 						},
@@ -681,6 +695,13 @@
 							]
 						}
 					]
+				}
+			],
+			"attachmentpoints": [
+				{
+					"code": "Rider",
+					"posX": "16.0","posY": "27.0","posZ": "14.0",
+					"rotationX": "0.0","rotationY": "180.0","rotationZ": "0.0"
 				}
 			]
 		}

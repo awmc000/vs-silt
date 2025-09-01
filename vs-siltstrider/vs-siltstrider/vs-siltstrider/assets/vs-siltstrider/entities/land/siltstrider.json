@@ -76,9 +76,9 @@
           "bodyYawLimit": 0.2,
           "controllable": true,
           "mountOffset": {
-            "x": 20,
-            "y": 50,
-            "z": 20
+            "x": 0,
+            "y": -0.5,
+            "z": 0
           }
         }
       ],
@@ -140,7 +140,7 @@
           }
         },
         "walk": {
-          "animation": "trot",
+          "animation": "walk",
           "animationSpeed": 1.35,
           "weight": 10,
           "movespeed": 0.019,
@@ -200,6 +200,67 @@
               "LowerFootL": "Average"
             }
           }
+        },
+        "sprint": {
+          "animation": "walk",
+          "weight": 10,
+          "animationSpeed": 2,
+          "movespeed": 0.08,
+          "blendMode": "Average",
+          "riderAnim": {
+            "animation": "rideelk-run",
+            "animationSpeed": 2,
+            "weight": 1,
+            "withFpVariant": true,
+            "blendMode": "Average",
+            "elementWeight": {
+              "LowerTorso": 80,
+              "UpperTorso": 80,
+              "UpperFootR": 80,
+              "UpperFootL": 80,
+              "LowerFootR": 80,
+              "LowerFootL": 80
+            },
+            "elementBlendMode": {
+              "LowerTorso": "Average",
+              "UpperTorso": "Average",
+              "UpperFootR": "Average",
+              "UpperFootL": "Average",
+              "LowerFootR": "Average",
+              "LowerFootL": "Average"
+            }
+          }
+        },
+        "jump": {
+          "animation": "jump",
+          "weight": 50,
+          "easeOutSpeed": 40,
+          "blendMode": "Average",
+          "animationSpeed": 1,
+          "movespeed": 0.08,
+          "riderAnim": {
+            "animation": "rideelk-jump",
+            "animationSpeed": 1,
+            "weight": 10,
+            "withFpVariant": true,
+            "blendMode": "Average",
+            "elementWeight": {
+              "LowerTorso": 160,
+              "UpperTorso": 160,
+              "UpperFootR": 160,
+              "UpperFootL": 160,
+              "LowerFootR": 160,
+              "LowerFootL": 160
+            },
+            "elementBlendMode": {
+              "LowerTorso": "Average",
+              "UpperTorso": "Average",
+              "UpperFootR": "Average",
+              "UpperFootL": "Average",
+              "LowerFootR": "Average",
+              "LowerFootL": "Average"
+            }
+          }
         }
       }
     },
@@ -224,7 +285,7 @@
       { "code": "repulseagents" },
       {
         "code": "controlledphysics", // Adds physics to the entity
-        "stepHeight": 0.2
+        "stepHeight": 4
       },
       {
         "code": "floatupwhenstuck", // Fixes corpse get stuck in ground
@@ -237,7 +298,8 @@
           "*": true
         }
       },
-      { "code": "ropetieable" }
+      { "code": "ropetieable" },
+      { "code": "selectionboxes" }
     ],
     "animations": [
       {
@@ -265,10 +327,11 @@
   },
   "server": {
     "behaviors": [
+      { "code": "selectionboxes" },
       { "code": "repulseagents" },
       {
         "code": "controlledphysics", // Adds physic interaction
-        "stepHeight": 0.2
+        "stepHeight": 4
       },
       {
         "code": "health", // Adds a health bar to the entity
