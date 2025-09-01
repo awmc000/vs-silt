@@ -3,7 +3,7 @@
   "class": "EntityAgent",
   "hitboxSize": {
     "x": 3,
-    "y": 10
+    "y": 4
   },
   "drops": [],
   "attributes": {
@@ -15,63 +15,36 @@
       "stepUpSpeed": 0.1
     },
     "floatupwhenstuck": { "onlyWhenDead": true },
-    "rideableaccessories": {
-      "wearableSlots": [
-        {
-          "code": "head",
-          "forCategoryCodes": [ "bridle" ],
-          "attachmentPointCode": "HeadAP"
-        },
-        {
-          "code": "face",
-          "forCategoryCodes": [ "face" ],
-          "attachmentPointCode": "FaceAP"
-        },
-        {
-          "code": "neck",
-          "forCategoryCodes": [ "lantern" ],
-          "attachmentPointCode": "NeckAP"
-        },
-        {
-          "code": "middleback",
-          "forCategoryCodes": [ "saddle" ],
-          "attachmentPointCode": "MidAP"
-        },
-        {
-          "code": "middlebackunder",
-          "forCategoryCodes": [ "blanket" ],
-          "attachmentPointCode": "MidUnderAP"
-        },
-        {
-          "code": "lowerback",
-          "forCategoryCodes": [ "bedroll" ],
-          "attachmentPointCode": "RearAP"
-        },
-        {
-          "code": "lowerbackside",
-          "forCategoryCodes": [ "sidebags" ],
-          "attachmentPointCode": "RearSideAP"
-        },
-        {
-          "code": "frontrightside",
-          "forCategoryCodes": [ "utilities" ],
-          "attachmentPointCode": "RFrontAP"
-        },
-        {
-          "code": "frontleftside",
-          "forCategoryCodes": [ "utilities" ],
-          "attachmentPointCode": "LFrontAP"
-        }
-      ]
-    },
     "selectionboxes": {
-      "selectionBoxes": [ "HeadAP", "FaceAP", "NeckAP", "MidAP", "MidUnderAP", "RearAP", "RearSideAP", "RFrontAP", "LFrontAP" ]
+      "selectionBoxes": ["MidAP"]
     },
     "rideable": {
       "interactMountAnySeat": true,
       "seats": [
         {
           "apName": "Rider",
+          "selectionBox": "MidAP",
+          "bodyYawLimit": 0.1,
+          "controllable": true,
+          "mountOffset": {
+            "x": 0,
+            "y": -0.5,
+            "z": 0
+          }
+        },
+        {
+          "apName": "Passenger1",
+          "selectionBox": "MidAP",
+          "bodyYawLimit": 0.1,
+          "controllable": true,
+          "mountOffset": {
+            "x": 0,
+            "y": -0.5,
+            "z": 0
+          }
+        },
+        {
+          "apName": "Passenger2",
           "selectionBox": "MidAP",
           "bodyYawLimit": 0.1,
           "controllable": true,
@@ -110,7 +83,7 @@
           }
         },
         "swim": {
-          "animation": "Swim",
+          "animation": "walk",
           "animationSpeed": 1,
           "movespeed": 0.02,
           "weight": 10,
@@ -170,7 +143,7 @@
           }
         },
         "walkback": {
-          "animation": "walkback",
+          "animation": "walk",
           "animationSpeed": 2.7,
           "weight": 10,
           "movespeed": 0.011,
@@ -232,7 +205,7 @@
           }
         },
         "jump": {
-          "animation": "jump",
+          "animation": "idle",
           "weight": 50,
           "easeOutSpeed": 40,
           "blendMode": "Average",
@@ -280,7 +253,12 @@
   "client": {
     "renderer": "Shape",
     "shape": { "base": "entity/land/siltstrider" },
-    "texture": { "base": "chitin2" },
+    "texture": {
+      "base": "chitin2",
+      "chalk4": "chalk4",
+      "chitin2": "chitin2",
+      "leg": "leg"
+    },
     "behaviors": [
       { "code": "repulseagents" },
       {
@@ -345,11 +323,6 @@
       {
         "code": "floatupwhenstuck", // Fixes corpse get stuck in ground
         "onlyWhenDead": true
-      },
-      {
-        "code": "despawn", // Makes the entity despawn if there is no player within 48 blocks
-        "minPlayerDistance": 48,
-        "minSeconds": 5
       },
       {
         "code": "emotionstates", // Adds different emotion states
