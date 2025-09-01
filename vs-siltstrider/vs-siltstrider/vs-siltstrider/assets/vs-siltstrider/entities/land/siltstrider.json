@@ -261,22 +261,13 @@
     },
     "behaviors": [
       { "code": "repulseagents" },
-      {
-        "code": "controlledphysics",
-        "stepHeight": 4
-      },
-      {
-        "code": "floatupwhenstuck",
-        "onlyWhenDead": true
-      },
+      { "code": "controlledphysics" },
+      { "code": "floatupwhenstuck" },
       { "code": "interpolateposition" },
-      {
-        "code": "rideable",
-        "enabledByType": {
-          "*": true
-        }
-      },
+      { "code": "health" },
+      { "code": "rideable", "enabledByType": { "*": true } },
       { "code": "ropetieable" },
+      { "code": "ownable" },
       { "code": "selectionboxes" }
     ],
     "animations": [
@@ -307,19 +298,12 @@
     "behaviors": [
       { "code": "selectionboxes" },
       { "code": "repulseagents" },
+      { "code": "rideable" },
       {
         "code": "controlledphysics",
         "stepHeight": 4
       },
-      {
-        "code": "health", // Adds a health bar to the entity
-        "currenthealth": 4,
-        "maxhealth": 4
-      },
-      {
-        "code": "deaddecay", // Makes the dead entity stay for one hour
-        "hoursToDecay": 1
-      },
+      { "code": "health" },
       {
         "code": "floatupwhenstuck", // Fixes corpse get stuck in ground
         "onlyWhenDead": true
