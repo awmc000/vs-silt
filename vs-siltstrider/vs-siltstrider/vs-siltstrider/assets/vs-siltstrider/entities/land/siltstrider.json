@@ -298,7 +298,7 @@
     "behaviors": [
       { "code": "selectionboxes" },
       { "code": "repulseagents" },
-      { "code": "rideable" },
+      { "code": "rideable", "enabledByType": { "*": true } },
       {
         "code": "controlledphysics",
         "stepHeight": 4
