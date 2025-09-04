@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Body/LegPair2/Leg3,Root/Body/LegPair2/Leg4,Root/Body/Arm/ForearmBack,Root/Body/LegTop,Root/Body/LegPair/Leg,Root/Body/RearBody/Cube5,Root/Body/LegPair3/Leg6,Root/Body/LegPair3/Leg5,Root/Body/LegPair/Leg2,Root/Head/Face/Mandible2,Root/Body/Arm,Root/Body/LegPair,Root/Body/LegPair2",
+		"collapsedPaths": "Root/Body/LegPair2/Leg3,Root/Body/LegPair2/Leg4,Root/Body/Arm/ForearmBack,Root/Body/Head,Root/Body/LegTop,Root/Body/LegPair/Leg,Root/Body/RearBody/Cube5,Root/Body/LegPair3/Leg6,Root/Body/LegPair3/Leg5,Root/Body/LegPair/Leg2,Root/Head/Face/Mandible2,Root/Body/Arm,Root/Body/LegPair,Root/Body/LegPair2",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -317,6 +317,16 @@
 								{
 									"code": "",
 									"posX": "0.0","posY": "0.0","posZ": "0.0",
+									"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
+								},
+								{
+									"code": "Passenger1",
+									"posX": "8.0","posY": "15.0","posZ": "10.0",
+									"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
+								},
+								{
+									"code": "Passenger2",
+									"posX": "8.0","posY": "15.0","posZ": "20.0",
 									"rotationX": "0.0","rotationY": "0.0","rotationZ": "0.0"
 								}
 							]
@@ -821,7 +831,7 @@
 					}
 				},
 				{
-					"frame": 20,
+					"frame": 19,
 					"elements": {
 						"Body": { "offsetX": 0.0, "offsetY": 35.0, "offsetZ": 0.0, "rotationX": -180.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
