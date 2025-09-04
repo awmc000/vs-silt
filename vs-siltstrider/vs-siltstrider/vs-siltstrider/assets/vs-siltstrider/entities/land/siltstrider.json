@@ -2,12 +2,21 @@
   "code": "siltstrider",
   "class": "EntityAgent",
   "hitboxSize": {
+    "x": 3.6,
+    "y": 5.75
+  },
+  "deadHitboxSize": {
     "x": 3,
     "y": 4
   },
   "drops": [],
   "attributes": {
-    "tamed": true
+    "tamed": true,
+    "killedByInfoText": "deadcreature-killed",
+    "creatureDiet": {
+      "foodCategories": [ "Grain", "Fruit", "Vegetable", "Protein" ],
+      "foodTags": [ "fruitmash" ]
+    }
   },
   "behaviorConfigs": {
     "controlledphysics": {
@@ -17,10 +26,6 @@
     "floatupwhenstuck": { "onlyWhenDead": true },
     "selectionboxes": {
       "selectionBoxes": [ "MidAP" ]
-    },
-    "creatureDiet": {
-      "foodCategories": [ "Grain", "Fruit", "Vegetable", "Protein" ],
-      "foodTags": [ "fruitmash" ]
     },
     "rideable": {
       "interactMountAnySeat": true,
@@ -269,8 +274,12 @@
       { "code": "floatupwhenstuck" },
       { "code": "interpolateposition" },
       { "code": "health" },
+      { "code": "harvestable" },
       { "code": "multiply" },
-      { "code": "rideable", "enabledByType": { "*": true } },
+      {
+        "code": "rideable",
+        "enabledByType": { "*": true }
+      },
       { "code": "ropetieable" },
       { "code": "ownable" },
       { "code": "selectionboxes" }
@@ -296,12 +305,24 @@
         "animationSpeed": 1,
         "weight": 10,
         "blendMode": "AddAverage"
+      },
+      {
+        "code": "die",
+        "animation": "die",
+        "animationSpeed": 1,
+        "weight": 10,
+        "blendMode": "AddAverage"
       }
     ]
   },
   "server": {
     "behaviors": [
       { "code": "selectionboxes" },
+      {
+        "code": "deaddecay",
+        "hoursToDecay": 96,
+        "decayedBlock": "carcass-large"
+      },
       { "code": "repulseagents" },
       {
         "code": "rideable",
@@ -347,17 +368,17 @@
         "drops": [
           {
             "type": "item",
-            "code": "redmeat-raw",
+            "code": "bushmeat-raw",
             "quantity": {
-              "avg": 6,
+              "avg": 2,
               "var": 1.5
             }
           },
           {
             "type": "item",
-            "code": "hide-raw-medium",
+            "code": "hide-raw-huge",
             "quantity": {
-              "avg": 3.5,
+              "avg": 2.0,
               "var": 1.5
             }
           },
@@ -398,10 +419,16 @@
           },
           {
             "code": "lookaround", // The entity will look around
+            "animation": "idle",
             "priority": 0.5
           }
         ]
       }
     ]
+  },
+  "sounds": {
+    "hurt": "game:creature/hooved/generic/call*",
+    "death": "game:creature/hooved/large/elk/bellow*",
+    "idle": "game:creature/pig/idle"
   }
 }
