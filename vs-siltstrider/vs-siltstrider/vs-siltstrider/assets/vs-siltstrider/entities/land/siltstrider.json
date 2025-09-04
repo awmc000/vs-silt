@@ -16,7 +16,11 @@
     },
     "floatupwhenstuck": { "onlyWhenDead": true },
     "selectionboxes": {
-      "selectionBoxes": ["MidAP"]
+      "selectionBoxes": [ "MidAP" ]
+    },
+    "creatureDiet": {
+      "foodCategories": [ "Grain", "Fruit", "Vegetable", "Protein" ],
+      "foodTags": [ "fruitmash" ]
     },
     "rideable": {
       "interactMountAnySeat": true,
@@ -265,6 +269,7 @@
       { "code": "floatupwhenstuck" },
       { "code": "interpolateposition" },
       { "code": "health" },
+      { "code": "multiply" },
       { "code": "rideable", "enabledByType": { "*": true } },
       { "code": "ropetieable" },
       { "code": "ownable" },
@@ -298,7 +303,10 @@
     "behaviors": [
       { "code": "selectionboxes" },
       { "code": "repulseagents" },
-      { "code": "rideable", "enabledByType": { "*": true } },
+      {
+        "code": "rideable",
+        "enabledByType": { "*": true }
+      },
       {
         "code": "controlledphysics",
         "stepHeight": 4
@@ -318,6 +326,48 @@
             "slot": 0,
             "priority": 1,
             "accumType": "max"
+          }
+        ]
+      },
+      {
+        "code": "multiply",
+        "spawnEntityCode": "siltstrider",
+        "spawnQuantityMin": 1,
+        "spawnQuantityMax": 1,
+        "growthCapEntityCodes": [ "siltstrider" ],
+        "requiresNearbyEntityCode": "siltstrider",
+        "requiresNearbyEntityRange": 10,
+        "pregnancyDays": 40,
+        "multiplyCooldownDaysMin": 6,
+        "multiplyCooldownDaysMax": 11,
+        "portionsEatenForMultiply": 10
+      },
+      {
+        "code": "harvestable",
+        "drops": [
+          {
+            "type": "item",
+            "code": "redmeat-raw",
+            "quantity": {
+              "avg": 6,
+              "var": 1.5
+            }
+          },
+          {
+            "type": "item",
+            "code": "hide-raw-medium",
+            "quantity": {
+              "avg": 3.5,
+              "var": 1.5
+            }
+          },
+          {
+            "type": "item",
+            "code": "fat",
+            "quantity": {
+              "avg": 4,
+              "var": 1.5
+            }
           }
         ]
       },
