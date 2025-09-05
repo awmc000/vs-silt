@@ -184,14 +184,14 @@
           }
         },
         "sprint": {
-          "animation": "walk",
+          "animation": "run",
           "weight": 10,
-          "animationSpeed": 2,
-          "movespeed": 0.08,
+          "animationSpeed": 1,
+          "movespeed": 0.06,
           "blendMode": "Average",
           "riderAnim": {
             "animation": "rideelk-run",
-            "animationSpeed": 2,
+            "animationSpeed": 1,
             "weight": 1,
             "withFpVariant": true,
             "blendMode": "Average",
