@@ -418,6 +418,29 @@
             "code": "lookaround", // The entity will look around
             "animation": "idle",
             "priority": 0.5
+          },
+          {
+            "code": "seekfoodandeat",
+            "movespeed": 0.004,
+            "priority": 1.3,
+            "animationSpeed": 2,
+            "animation": "Walk",
+            "eatAnimation": "Eat",
+            "eatSound": "creature/animal-eat2",
+            "eatTime": 1.5,
+            "mincooldownHours": 1,
+            "maxcooldownHours": 4
+          },
+          {
+            "code": "fleeentity",
+            "entityCodes": [ "player", "bear-*" ],
+            "priority": 1.8,
+            "movespeed": 0.05,
+            "seekingRange": 12,
+            "animation": "Run",
+            "animationSpeed": 5.5,
+            "sound": "creature/pig/hurt",
+            "whenInEmotionState": "fleeondamage"
           }
         ]
       }
