@@ -2,7 +2,7 @@
   "code": "siltstrider",
   "class": "EntityAgent",
   "hitboxSize": {
-    "x": 3.6,
+    "x": 2.6,
     "y": 5.75
   },
   "deadHitboxSize": {
@@ -263,10 +263,7 @@
     "renderer": "Shape",
     "shape": { "base": "entity/land/siltstrider" },
     "texture": {
-      "base": "chitin2",
-      "chalk4": "chalk4",
-      "chitin2": "chitin2",
-      "leg": "leg"
+      "base": "entity/land/siltstrider"
     },
     "behaviors": [
       { "code": "repulseagents" },
