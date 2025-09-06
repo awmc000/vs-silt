@@ -9,7 +9,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"base": "siltstrider"
+		"base": "entity/land/siltstrider"
 	},
 	"elements": [
 		{
