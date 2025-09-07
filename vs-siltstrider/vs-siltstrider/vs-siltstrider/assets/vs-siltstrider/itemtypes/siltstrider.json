@@ -5,13 +5,13 @@
   "variantgroups": [
     {
       "code": "type",
-      "states": [ "siltstrider" ]
+      "states": [ "siltstrider-adult", "siltstrider-juvenile" ]
     }
   ],
   "shape": {
     "base": "entity/land/siltstrider"
   },
-  "texture": { "base": "chitin2" },
+  "texture": { "base": "entity/land/siltstrider" },
   "creativeinventory": {
     "general": [ "*" ],
     "items": [ "*" ],
@@ -20,16 +20,16 @@
   "materialDensity": 600,
   "guiTransform": {
     "rotation": {
-      "x": 0,
-      "y": -90,
-      "z": -180
+      "x": 4,
+      "y": -130,
+      "z": -161
     },
     "origin": {
       "x": 0.5,
       "y": 4,
       "z": 0.5
     },
-    "scale": 6
+    "scale": 0.37
   },
   "fpHandTransform": {
     "rotation": {
@@ -61,5 +61,18 @@
       "z": 0.5
     },
     "scale": 6
+  },
+  "tpHandTransform": {
+    "translation": {
+      "x": -7.5,
+      "y": -3.6,
+      "z": -4.4
+    },
+    "rotation": {
+      "x": 0,
+      "y": -73,
+      "z": 0
+    },
+    "scale": 0.25
   }
 }

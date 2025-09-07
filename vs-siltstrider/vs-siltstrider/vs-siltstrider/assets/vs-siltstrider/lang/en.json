@@ -1,4 +1,7 @@
 {
-  "hello": "hello world!",
-  "siltstrider": "Silt Strider"
+  "siltstrider": "Silt Strider",
+  "item-creature-siltstrider-adult": "Silt Strider",
+  "item-creature-siltstrider-juvenile": "Juvenile Silt Strider",
+  "item-dead-creature-siltstrider-adult": "Silt Strider Carcass",
+  "item-dead-creature-siltstrider-juvenile": "Juvenile Silt Strider Carcass"
 }

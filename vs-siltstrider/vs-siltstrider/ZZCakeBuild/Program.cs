@@ -26,7 +26,7 @@ namespace CakeBuild
 
     public class BuildContext : FrostingContext
     {
-        public const string ProjectName = "vs_siltstrider";
+        public const string ProjectName = "siltstriders";
         public string BuildConfiguration { get; }
         public string Version { get; }
         public string Name { get; }
