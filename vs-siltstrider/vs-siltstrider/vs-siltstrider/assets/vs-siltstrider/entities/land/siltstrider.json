@@ -383,12 +383,45 @@
         "code": "emotionstates", // Adds different emotion states
         "states": [
           {
-            "code": "fleeondamage", // After the entity is hit it will try to flee for 10 seconds
+            "code": "fleeondamage",
+            "duration": 60,
+            "chance": 0.8,
+            "slot": 0,
+            "priority": 5,
+            "accumType": "max",
+            "whenHealthRelBelow": 0.4
+          },
+          {
+            "code": "aggressiveondamage",
+            "duration": 15,
+            "chance": 0.6,
+            "slot": 0,
+            "priority": 2,
+            "accumType": "noaccum"
+          },
+          {
+            "code": "fleeondamage",
             "duration": 10,
-            "chance": 0.2,
+            "chance": 1,
             "slot": 0,
             "priority": 1,
             "accumType": "max"
+          },
+          {
+            "code": "alarmherdondamage",
+            "chance": 1,
+            "slot": 1,
+            "priority": 1,
+            "accumType": "max"
+          },
+          {
+            "code": "aggressivearoundentities",
+            "duration": 60,
+            "chance": 1,
+            "slot": 2,
+            "priority": 1,
+            "entityCodes": [ "siltstrider-juvenile" ],
+            "maxGeneration": 2
           }
         ]
       },
@@ -442,6 +475,33 @@
         "code": "taskai", // Handles what the entity does, a task will be processed one at a time
         "aitasks": [
           {
+            "code": "meleeattack",
+            "entityCodes": [ "player" ],
+            "priority": 2,
+            "damage": 4,
+            "damageTier": 1,
+            "mincooldown": 1500,
+            "maxcooldown": 1500,
+            "attackDurationMs": 900,
+            "damagePlayerAtMs": 300,
+            "animation": "Attack",
+            "animationSpeed": 1,
+            "sound": "creature/pig/attack",
+            "whenInEmotionState": "aggressiveondamage|aggressivearoundentities"
+          },
+          {
+            "code": "seekentity",
+            "entityCodes": [ "player" ],
+            "priority": 1.5,
+            "mincooldown": 1000,
+            "maxcooldown": 1500,
+            "movespeed": 0.037,
+            "seekingRange": 6,
+            "animation": "Run",
+            "animationSpeed": 1,
+            "whenInEmotionState": "aggressiveondamage|aggressivearoundentities"
+          },
+          {
             "code": "idle", // the figure will stand still and think
             "priority": 1.2,
             "priorityForCancel": 1.35,
@@ -487,7 +547,7 @@
             "movespeed": 0.05,
             "seekingRange": 12,
             "animation": "Run",
-            "animationSpeed": 5.5,
+            "animationSpeed": 1,
             "sound": "creature/pig/hurt",
             "whenInEmotionState": "fleeondamage"
           }

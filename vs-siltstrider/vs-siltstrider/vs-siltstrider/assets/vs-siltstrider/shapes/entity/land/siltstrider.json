@@ -1,6 +1,6 @@
 {
 	"editor": {
-		"collapsedPaths": "Root/Body/RearBody/Cube5,Root/Body/Arm/ForearmBack,Root/Body/LegTop,Root/Head/Face/Mandible2,Root/Body/Arm,Root/Body/LegPair2",
+		"collapsedPaths": "Root/Body/RearBody/Cube5,Root/Body/RearBody,Root/Body/LegTop,Root/Head/Face/Mandible2,Root/Body/LegPair,Root/Body/LegPair2,Root/Body/LegPair3",
 		"allAngles": false,
 		"entityTextureMode": false
 	},
@@ -238,7 +238,6 @@
 											"name": "ForearmTip2",
 											"from": [ 0.0, -3.0, 0.0 ],
 											"to": [ 0.45, 0.45, 1.2 ],
-											"rotationOrigin": [ 0.0, -3.0, 0.0 ],
 											"faces": {
 												"north": { "texture": "#base", "uv": [ 16.0, 12.0, 15.0, 8.0 ], "autoUv": false },
 												"east": { "texture": "#base", "uv": [ 16.0, 12.0, 15.0, 8.0 ], "autoUv": false },
@@ -825,13 +824,54 @@
 				{
 					"frame": 0,
 					"elements": {
-						"Body": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
+						"Body": { "offsetX": 0.0, "offsetY": 0.0, "offsetZ": 0.0, "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"LegMid": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Leg": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Leg2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"LegMid2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Leg3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Leg4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"LegBottom4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"LegMid4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"LegMid3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Leg5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"LegMid5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Leg6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"LegMid6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Arm": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ForearmBack": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ForearmLow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ForearmTip": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"Arm2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ForearmBack2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ForearmTip2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 }
 					}
 				},
 				{
 					"frame": 19,
 					"elements": {
-						"Body": { "offsetX": 0.0, "offsetY": 35.0, "offsetZ": 0.0, "rotationX": -180.0, "rotationY": 0.0, "rotationZ": 0.0 }
+						"Body": { "offsetX": 0.0, "offsetY": 35.0, "offsetZ": 0.0, "rotationX": -180.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"LegMid": { "rotationX": 0.0, "rotationY": -135.0, "rotationZ": 157.5 },
+						"Leg": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 67.5 },
+						"Leg2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
+						"LegMid2": { "rotationX": 0.0, "rotationY": -22.5, "rotationZ": -135.0 },
+						"Leg3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
+						"LegMid3": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 112.5 },
+						"Leg4": { "rotationX": 0.0, "rotationY": 45.0, "rotationZ": 22.5 },
+						"LegMid4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 112.5 },
+						"LegBottom4": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 90.0 },
+						"Leg5": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"LegMid5": { "rotationX": -67.5, "rotationY": -22.5, "rotationZ": 90.0 },
+						"Leg6": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 22.5 },
+						"LegMid6": { "rotationX": 0.0, "rotationY": -67.5, "rotationZ": -112.5 },
+						"Arm": { "rotationX": 0.0, "rotationY": 22.5, "rotationZ": 0.0 },
+						"ForearmBack": { "rotationX": 0.0, "rotationY": 22.5, "rotationZ": 180.0 },
+						"ForearmLow": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ForearmTip": { "rotationX": 0.0, "rotationY": 67.5, "rotationZ": -112.5 },
+						"ForearmBack2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 0.0 },
+						"ForearmLow2": { "rotationX": 0.0, "rotationY": -22.5, "rotationZ": -67.5 },
+						"Arm2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 },
+						"ForearmTip2": { "rotationX": 0.0, "rotationY": 0.0, "rotationZ": 45.0 }
 					}
 				}
 			]
