@@ -44,14 +44,14 @@
     },
     "floatupwhenstuck": { "onlyWhenDead": true },
     "selectionboxes": {
-      "selectionBoxes": [ "MidAP" ]
+      "selectionBoxes": [ "MidAP", "Passenger1", "Passenger2" ]
     },
     "rideable": {
       "interactMountAnySeat": true,
       "seats": [
         {
           "apName": "Rider",
-          "selectionBox": "MidAP",
+          "selectionBox": "Rider",
           "bodyYawLimit": 0.1,
           "controllable": true,
           "mountOffset": {
@@ -62,9 +62,9 @@
         },
         {
           "apName": "Passenger1",
-          "selectionBox": "MidAP",
+          "selectionBox": "Passenger1",
           "bodyYawLimit": 0.1,
-          "controllable": true,
+          "controllable": false,
           "mountOffset": {
             "x": 0,
             "y": -0.5,
@@ -73,9 +73,9 @@
         },
         {
           "apName": "Passenger2",
-          "selectionBox": "MidAP",
+          "selectionBox": "Passenger2",
           "bodyYawLimit": 0.1,
-          "controllable": true,
+          "controllable": false,
           "mountOffset": {
             "x": 0,
             "y": -0.5,
