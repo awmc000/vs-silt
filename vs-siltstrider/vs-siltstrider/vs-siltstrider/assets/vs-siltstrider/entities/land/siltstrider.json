@@ -209,7 +209,7 @@
           "movespeed": 0.06,
           "blendMode": "Average",
           "riderAnim": {
-            "animation": "rideelk-run",
+            "animation": "rideelk-walk",
             "animationSpeed": 1,
             "weight": 1,
             "withFpVariant": true,
@@ -376,8 +376,8 @@
           "*-juvenile": true,
           "*": false
         },
-        "hoursToGrow": 72,
-        "adultEntityCodes": [ "siltstrider-adult" ]
+        "hoursToGrow": 100,
+        "adultEntityCodes": [ "vs-siltstrider:siltstrider-adult" ]
       },
       {
         "code": "emotionstates", // Adds different emotion states
