@@ -433,7 +433,7 @@
         },
         "spawnEntityCode": "vs-siltstrider:siltstrider-juvenile",
         "spawnQuantityMin": 1,
-        "spawnQuantityMax": 2,
+        "spawnQuantityMax": 1,
         "requiresNearbyEntityCode": "vs-siltstrider:siltstrider-adult",
         "requiresNearbyEntityRange": 10,
         "pregnancyDays": 40,
@@ -547,7 +547,7 @@
             "seekingRange": 12,
             "animation": "Run",
             "animationSpeed": 1,
-            "sound": "creature/pig/hurt",
+            "sound": "vs-siltstrider:call*",
             "whenInEmotionState": "fleeondamage"
           }
         ]
@@ -604,8 +604,8 @@
     }
   },
   "sounds": {
-    "hurt": "game:creature/hooved/generic/call*",
-    "death": "game:creature/hooved/large/elk/bellow*",
-    "idle": "game:creature/pig/idle"
+    "hurt": "vs-siltstrider:call*",
+    "death": "vs-siltstrider:lowcall*",
+    "idle": "vs-siltstrider:low*"
   }
 }
