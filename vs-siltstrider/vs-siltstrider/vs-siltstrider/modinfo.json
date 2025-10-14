@@ -6,7 +6,7 @@
     "Genovefa"
   ],
   "description": "A docile, rideable insect of great stature, used by the Dunmer for overland voyages for centuries.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "game": ""
   }
