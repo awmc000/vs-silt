@@ -46,8 +46,39 @@
     "selectionboxes": {
       "selectionBoxes": [ "MidAP", "Passenger1", "Passenger2" ]
     },
+    "gait": {
+      "idleGait": "idle",
+      "gaits": [
+        {
+          "code": "idle",
+          "yawMultiplier": 1
+        },
+        {
+          "code": "walk",
+          "movespeed": 0.019,
+          "yawMultiplier": 1,
+          "sound": "game:creature/hooved/trot"
+        },
+        {
+          "code": "run",
+          "movespeed": 0.1067,
+          "yawMultiplier": 1,
+          "isSprint": true,
+          "fallbackGaitCode": "walk",
+          "sound": "game:creature/hooved/gallop"
+        },
+        {
+          "code": "jump",
+          "movespeed": 0.1067,
+          "yawMultiplier": 1,
+          "fallbackGaitCode": "walk",
+          "sound": "game:creature/hooved/gallop"
+        }
+      ]
+    },
     "rideable": {
       "interactMountAnySeat": true,
+      "rideableGaitOrder": [ "idle", "walk", "run" ],
       "seats": [
         {
           "apName": "Rider",
@@ -313,6 +344,7 @@
           "*": true
         }
       },
+      { "code": "gait" },
       { "code": "ropetieable" },
       { "code": "ownable" },
       { "code": "selectionboxes" }
@@ -366,6 +398,7 @@
         "stepHeight": 4
       },
       { "code": "health" },
+      { "code": "gait" },
       {
         "code": "floatupwhenstuck", // Fixes corpse get stuck in ground
         "onlyWhenDead": true
