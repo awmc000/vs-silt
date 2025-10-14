@@ -55,13 +55,13 @@
         },
         {
           "code": "walk",
-          "movespeed": 0.019,
+          "movespeed": 0.03,
           "yawMultiplier": 1,
           "sound": "game:creature/hooved/trot"
         },
         {
           "code": "run",
-          "movespeed": 0.1067,
+          "movespeed": 0.2,
           "yawMultiplier": 1,
           "isSprint": true,
           "fallbackGaitCode": "walk",
@@ -233,7 +233,7 @@
             }
           }
         },
-        "sprint": {
+        "run": {
           "animation": "run",
           "weight": 10,
           "animationSpeed": 1,
