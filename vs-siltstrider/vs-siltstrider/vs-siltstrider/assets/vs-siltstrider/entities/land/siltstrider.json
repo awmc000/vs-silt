@@ -1,6 +1,6 @@
 {
   "code": "siltstrider",
-  "class": "EntityAgent",
+  "class": "SiltStrider",
   "variantgroups": [
     {
       "code": "age",

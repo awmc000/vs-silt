@@ -2,6 +2,7 @@
 using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Server;
+using vssiltstrider.src;
 
 namespace vs_siltstrider
 {
@@ -13,6 +14,7 @@ namespace vs_siltstrider
         public override void Start(ICoreAPI api)
         {
             Mod.Logger.Notification("Hello from template mod: " + api.Side);
+            api.RegisterEntity("SiltStrider", typeof(SiltStrider));
         }
 
         public override void StartServerSide(ICoreServerAPI api)
