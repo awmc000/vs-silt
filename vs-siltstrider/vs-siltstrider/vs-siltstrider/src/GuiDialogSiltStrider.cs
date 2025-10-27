@@ -30,13 +30,19 @@ namespace vssiltstrider.src
 
         public override string ToggleKeyCombinationCode => null;
 
+        public bool OnButtonPress()
+        {
+            capi.TriggerIngameError(this, "onlyonedialog", Lang.Get("button pressed"));
+            return true;
+        }
         public void Compose()
         {
             // Auto-sized dialog at the center of the screen
             ElementBounds dialogBounds = ElementStdBounds.AutosizedMainDialog.WithAlignment(EnumDialogArea.LeftTop);
 
             // Just a simple 300x100 pixel box with 40 pixels top spacing for the title bar
-            ElementBounds textBounds = ElementBounds.Fixed(0, 40, 300, 100);
+            ElementBounds textBounds = ElementBounds.Fixed(0, 0, 300, 100);
+            ElementBounds buttonBounds = ElementBounds.Fixed(0, 40, 100, 50);
 
             // Background boundaries. Again, just make it fit it's child elements, then add the text as a child element
             ElementBounds bgBounds = ElementBounds.Fill.WithFixedPadding(GuiStyle.ElementToDialogPadding);
@@ -46,6 +52,7 @@ namespace vssiltstrider.src
             SingleComposer = capi.Gui.CreateCompo("myAwesomeDialog", dialogBounds)
                 .AddShadedDialogBG(bgBounds)
                 .AddStaticText("Silt Strider Navigation", CairoFont.WhiteDetailText(), textBounds)
+                .AddButton("Press Button", OnButtonPress, buttonBounds)
                 .Compose()
             ;
         }
