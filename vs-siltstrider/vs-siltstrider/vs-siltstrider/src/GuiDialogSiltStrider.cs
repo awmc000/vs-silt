@@ -33,6 +33,7 @@ namespace vssiltstrider.src
         public bool OnButtonPress()
         {
             capi.TriggerIngameError(this, "onlyonedialog", Lang.Get("button pressed"));
+            // TODO: Trigger an AI Behaviour
             return true;
         }
         public void Compose()
