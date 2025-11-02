@@ -48,8 +48,10 @@ namespace vssiltstrider.src
 
         public override void OnInteract(EntityAgent byEntity, ItemSlot slot, Vec3d hitPosition, EnumInteractMode mode)
         {
+
             if (Api.Side == EnumAppSide.Client)
             {
+                Console.WriteLine("task x: " + GetBehavior<EntityBehaviorTaskAI>()?.TaskManager?.GetTask<AiTaskFollowCourse>().x);
                 TryOpenNavigateDialog(byEntity);
             }
         }

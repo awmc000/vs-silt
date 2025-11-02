@@ -324,6 +324,7 @@
       "*": 0
     },
     "behaviors": [
+      { "code": "stridernavigate" },
       { "code": "repulseagents" },
       { "code": "controlledphysics" },
       { "code": "floatupwhenstuck" },
@@ -382,6 +383,7 @@
   },
   "server": {
     "behaviors": [
+      {"code": "stridernavigate"},
       { "code": "selectionboxes" },
       {
         "code": "deaddecay",
@@ -506,6 +508,12 @@
       {
         "code": "taskai", // Handles what the entity does, a task will be processed one at a time
         "aitasks": [
+          {
+            "code": "followcourse",
+            "priority": 3,
+            "movespeed": 0.04,
+            "animation": "Walk"
+          },
           {
             "code": "meleeattack",
             "entityCodes": [ "player" ],
