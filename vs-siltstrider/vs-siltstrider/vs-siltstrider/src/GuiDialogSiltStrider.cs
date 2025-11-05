@@ -8,6 +8,8 @@ using Vintagestory.API.Common;
 using Vintagestory.API.Config;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
+using Vintagestory.API.MathTools;
+using vs_siltstrider;
 /*
  * Reference: https://github.com/anegostudios/vssurvivalmod/blob/master/Gui/GuiDialogTrader.cs
  */
@@ -33,27 +35,13 @@ namespace vssiltstrider.src
         public bool OnButtonPress()
         {
             capi.TriggerIngameError(this, "onlyonedialog", Lang.Get("button pressed"));
-            
-            // TODO: Move all this logic to a network message to the server side, we are on client side!
-            // TODO: Set X, Y, Z on the driving AITask
-            var tm = strider.GetBehavior<EntityBehaviorTaskAI>()?.TaskManager;
-            if (tm != null)
+            SiltStriderNavigationMessage msg = new()
             {
-                Console.WriteLine("taskmgr: " + tm.ToString());
-                Console.WriteLine(tm.AllTasks);
-            }
-            var task = strider.GetBehavior<EntityBehaviorTaskAI>()?.TaskManager?.GetTask<AiTaskFollowCourse>();
-            if (task == null)
-            {
-                Console.WriteLine("The task is null in GuiDialogSiltStrider!");
-            }
-            else
-            {
-                task.x = 1;
-                task.y = 1;
-                task.z = 1;
-            }
-            // TODO: Set a flag that allows the task to execute
+                Destination = new(1, 1, 1),
+                Stop = false,
+                EntityCode = strider.EntityId
+            };
+            capi.Network.GetChannel("SiltStriderNavigation").SendPacket(msg);
             return true;
         }
         public void Compose()

@@ -19,6 +19,7 @@ namespace vssiltstrider.src
     {
         protected GuiDialogSiltStrider dlg;
 
+
         void TryOpenNavigateDialog(EntityAgent byEntity)
         {
             if (World.Side != EnumAppSide.Client) return;
@@ -51,9 +52,10 @@ namespace vssiltstrider.src
 
             if (Api.Side == EnumAppSide.Client)
             {
-                Console.WriteLine("task x: " + GetBehavior<EntityBehaviorTaskAI>()?.TaskManager?.GetTask<AiTaskFollowCourse>().x);
+                Console.WriteLine("task x: " + GetBehavior<EntityBehaviorTaskAI>()?.TaskManager?.GetTask<AiTaskFollowCourse>().destination);
                 TryOpenNavigateDialog(byEntity);
             }
         }
+
     }
 }
