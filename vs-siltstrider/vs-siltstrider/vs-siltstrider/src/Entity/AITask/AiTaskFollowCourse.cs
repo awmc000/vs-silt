@@ -13,7 +13,7 @@ namespace vssiltstrider.src
 {
     public class AiTaskFollowCourse : AiTaskBase
     {
-        public bool active = true;
+        public bool active = false;
         public BlockPos destination = new(0,0,0);
         float moveSpeed = 0.02f;
         bool stuck = false;
@@ -41,12 +41,12 @@ namespace vssiltstrider.src
 
         public override bool ShouldExecute()
         {
-            return true;
+            return active;
         }
 
         public override bool ContinueExecute(float dt)
         {
-            return true;
+            return active;
         }
     }
 }

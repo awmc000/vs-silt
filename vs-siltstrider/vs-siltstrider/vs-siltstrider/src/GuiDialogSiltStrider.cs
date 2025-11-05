@@ -20,13 +20,19 @@ namespace vssiltstrider.src
         protected SiltStrider strider;
         protected GuiDialog dlg;
         public List<EntityPlayer> interactingWithPlayer = new List<EntityPlayer>();
-
+        public SiltStriderNavigationMessage CurrentMessage;
         public String testGuiText;
 
         public GuiDialogSiltStrider(SiltStrider ss, ICoreClientAPI capi) : base(capi)
         {
             this.strider = ss;
             testGuiText = "Hello, World!";
+            CurrentMessage = new()
+            {
+                Destination = new(1, 1, 1),
+                Stop = true,
+                EntityCode = strider.EntityId
+            };
             Compose();
         }
 
@@ -35,13 +41,9 @@ namespace vssiltstrider.src
         public bool OnButtonPress()
         {
             capi.TriggerIngameError(this, "onlyonedialog", Lang.Get("button pressed"));
-            SiltStriderNavigationMessage msg = new()
-            {
-                Destination = new(1, 1, 1),
-                Stop = false,
-                EntityCode = strider.EntityId
-            };
-            capi.Network.GetChannel("SiltStriderNavigation").SendPacket(msg);
+            // Toggle stop
+            CurrentMessage.Stop = !CurrentMessage.Stop;
+            capi.Network.GetChannel("SiltStriderNavigation").SendPacket(CurrentMessage);
             return true;
         }
         public void Compose()
