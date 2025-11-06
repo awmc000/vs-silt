@@ -19,14 +19,13 @@ namespace vssiltstrider.src
     {
         protected SiltStrider strider;
         protected GuiDialog dlg;
-        public List<EntityPlayer> interactingWithPlayer = new List<EntityPlayer>();
+        public List<EntityPlayer> interactingWithPlayer = [];
         public SiltStriderNavigationMessage CurrentMessage;
-        public String testGuiText;
+        public String destinationText;
 
         public GuiDialogSiltStrider(SiltStrider ss, ICoreClientAPI capi) : base(capi)
         {
-            this.strider = ss;
-            testGuiText = "Hello, World!";
+            strider = ss;
             CurrentMessage = new()
             {
                 Destination = new(1, 1, 1),
@@ -42,6 +41,15 @@ namespace vssiltstrider.src
         {
             capi.TriggerIngameError(this, "onlyonedialog", Lang.Get("button pressed"));
             // Toggle stop
+            BlockPos dest = new(1, 1, 1);
+            if (destinationText != null)
+            {
+                int[] coords = destinationText.Split(',').Select(int.Parse).ToArray();
+                dest.X = coords[0];
+                dest.Y = coords[1];
+                dest.Z = coords[2];
+            }
+            CurrentMessage.Destination = dest;
             CurrentMessage.Stop = !CurrentMessage.Stop;
             capi.Network.GetChannel("SiltStriderNavigation").SendPacket(CurrentMessage);
             return true;
@@ -62,11 +70,13 @@ namespace vssiltstrider.src
             bgBounds.WithChildren(fieldBounds);
             bgBounds.WithChildren(buttonBounds);
 
+            // TODO: Get list of player map waypoints, select from dropdown!
+
             SingleComposer = capi.Gui.CreateCompo("myAwesomeDialog", dialogBounds)
                 .AddShadedDialogBG(bgBounds)
                 .AddStaticText("Strider Navigation", CairoFont.WhiteDetailText(), textBounds)
                 .AddButton("Enter Destination", OnButtonPress, buttonBounds)
-                .AddTextInput(fieldBounds, (string s) => {  })
+                .AddTextInput(fieldBounds, (string s) => { destinationText = s; })
                 .Compose()
             ;
         }

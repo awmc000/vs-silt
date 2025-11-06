@@ -44,3 +44,8 @@ Button press in GUI
 
 - Advice from Dana: refer to board game mod shuffle network code
 - EEK, the client side GUI is reaching server side mod system, which is able to find the entity!
+
+### AI Tasks are shut off when an entity is being ridden
+
+- see line 305
+- Do I need to inherit BehaviorRideable and change this...?

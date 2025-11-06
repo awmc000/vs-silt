@@ -51,6 +51,7 @@ namespace vs_siltstrider
             Mod.Logger.Notification("Received SiltStriderNavigationMessage from " + fromPlayer.PlayerName + "with dest" + networkRequest.Destination);
             var ent = serverApi.World.GetEntityById(networkRequest.EntityCode);
             var task = ent.GetBehavior<EntityBehaviorTaskAI>()?.TaskManager?.GetTask<AiTaskFollowCourse>();
+            task.destination = networkRequest.Destination;
             task.active = !networkRequest.Stop;
             Mod.Logger.Notification("Found AiTask on strider:" + task.destination + ", " + task);
         }

@@ -27,16 +27,13 @@ namespace vssiltstrider.src
         {
             //     public override bool WalkTowards(Vec3d target, float movingSpeed, float targetDistance, Action OnGoalReached, Action OnStuck, EnumAICreatureType creatureType = EnumAICreatureType.Default)
             //WaypointsTraverser wt = new WaypointsTraverser(base.entity);
-            if (active)
-            {
-                pathTraverser.WalkTowards(
-                    new Vec3d(destination.X, destination.Y, destination.Z), // target
-                    moveSpeed, // movingspeed
-                    0.12f, // target distance
-                    () => { }, // on goal reached
-                    () => stuck = true // onstuck
-                );
-            }
+            pathTraverser.WalkTowards(
+                new Vec3d(destination.X, destination.Y, destination.Z), // target
+                moveSpeed, // movingspeed
+                0.12f, // target distance
+                () => { }, // on goal reached
+                () => stuck = true // onstuck
+            );
         }
 
         public override bool ShouldExecute()
