@@ -49,3 +49,5 @@ Button press in GUI
 
 - see line 305
 - Do I need to inherit BehaviorRideable and change this...?
+- just make a separate behaviour?
+- ... don't want to repeat work, so probably inherit BehaviorRideable and override methods necessary

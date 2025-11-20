@@ -16,6 +16,7 @@ namespace vssiltstrider.src
         {
 
         }
+
         public override string PropertyName()
         {
             return "stridernavigate";
